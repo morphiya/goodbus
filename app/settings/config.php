@@ -7,8 +7,8 @@
 
 defined ('VG_ACCESS') or die ('Access denied');
 
-const SITE_URL = "http://goodbus.dp.ua";
-const SITE_PATH = '/goodbus.dp.ua/';
+const SITE_URL = "/"; 	// http://goodbus.dp.ua
+const SITE_PATH = "/"; 	// /goodbus.dp.ua/
 
 const DB_USER = 'root';
 const DB_PASS = 'MYSQL_ROOT_PASSWORD';
