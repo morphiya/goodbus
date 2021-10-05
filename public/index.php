@@ -16,7 +16,7 @@ use app\exceptions\MyException;
 use app\controllers\Route;
 
 try {
-	Route::getInstance();
+	Route::getInstance()->route();
 }
 catch (MyException $e) {
 	exit($e->getMessage());

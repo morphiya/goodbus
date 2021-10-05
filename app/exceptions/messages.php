@@ -6,6 +6,6 @@
  */
 
 return [
-	1 => 'This page isn`t exist',
-	2 => 'Site under maintenance'
+	0 => 'This page isn`t exist',
+	1 => 'Site under maintenance'
 ];

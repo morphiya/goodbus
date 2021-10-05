@@ -28,7 +28,7 @@ class Settings
 		'default' => [
 			'controller'	=> 'ActsController',
 			'inputMethod'	=> 'inputAct',
-			'outputMethod'	=> 'outputAcr'
+			'outputMethod'	=> 'outputAct'
 		]
 	];
 

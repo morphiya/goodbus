@@ -12,7 +12,7 @@ const SITE_PATH = "/"; 	// /goodbus.dp.ua/
 
 const DB_USER = 'root';
 const DB_PASS = 'MYSQL_ROOT_PASSWORD';
-const DB_HOST = 'localhost';
+const DB_HOST = 'db:3306';
 const DB_NAME = 'goodbus_data';
 
 const TEMPLATE = '../app/templates/default/';

@@ -9,7 +9,7 @@ use app\traits\Singleton;
 use app\settings\Settings;
 use app\exceptions\MyException;
 
-class Route
+class Route extends BaseController
 {
 	use Singleton;
 
@@ -28,7 +28,7 @@ class Route
 			// get a list of routes
 			$this->routes = Settings::getProperty('routes');
 			if(!$this->routes) {
-				throw new MyException('Routing config doesn`t exist in (app/settings/Settings.php)', 2);
+				throw new MyException('Routing config doesn`t exist in (app/settings/Settings.php)', 1);
 			}
 
 			$url = explode('/', substr($address_str, strlen(SITE_PATH)));
@@ -46,7 +46,7 @@ class Route
 			$this->createRoute($role, $url);
 		}
 		else {
-			throw new MyException("Invalid site directory. Check the app/settings/config.php", 2);
+			throw new MyException("Invalid site directory. Check the app/settings/config.php", 1);
 		}
 	}
 
@@ -64,7 +64,8 @@ class Route
 		} else {
 			$this->controller .= $this->routes['default']['controller'];
 		}
-		$controller_path = str_replace('/', '\\', $this->controller);
+		$this->inputMethod = (!empty($route[1])) ? $route[1] : $this->routes['default']['inputMethod'];
+		$this->outputMethod = (!empty($route[2])) ? $route[2] : $this->routes['default']['outputMethod'];
 
 	}
 }
